@@ -1,0 +1,39 @@
+/*
+    Polimorfizm
+
+    *** Kazda klasa w oddzielnym pliku naglowkowym/implementacyjnym
+    *** W kazdym konstruktorze/destruktorze raportowac na cout (clog) jego wywolanie
+    *** Po zadeklarowaniu kazdej klasy (wybranego elementu) utworzyc obiekt i przetestowac
+        dzialanie
+
+    1. Zadeklarowac abstrakcyjna klase zwierzak zawiarajaca:
+       - pole prywatne nazwa (const string)
+       - pole protected wiek (int lub double)
+       - metody (protected lub public): nazwa_odczytaj, wiek_odczytaj, wiek_zapisz,
+       - konstruktor (dwuargumentowy pozwalajacy ustawic nazwe i wiek) oraz destruktor,
+       - publiczna wirtualna metode zerowa daj_glos.
+       [czy mozna zdefiniowac obiekt typu zwierzak?]
+    
+    2. Wyprowadzic z klasy zwierzak klase potomna pies oraz kot, utworzyc konstruktor/destruktor
+       oraz uzupelnic metode daj_glos; w programie glownym zdefiniowac obiekty typu pies i kot
+       oraz przetestowac dzialanie wybranych metod.
+
+    3. Zdefiniowac wektor (zwierzyniec) wskaznikow na obiekty klasy zwierzak oraz dodac do niego kilka
+       obiektow typu pies oraz kot; przetestowac dzialanie metody daj_glos wywolujac ja dla kolejnych 
+       obiektow zawartych w wektorze;
+       [jak sprawdzic z jakiej klasy pochodzi dany obiekt?]
+       wywolac metode daj_glos najpierw dla wszystkich obiektow klasy pies, a nastepnie dla wszystkich
+       obiektow klasy kot (wykorzystac mechanizm RTTI tj. operator typeid zwracajacy wartosc type_info).
+
+    4. Napisac fragment kodu probujacy zmienic zawartosc kazdego elementu wektora (wskazniki na obiekty
+       klasy zwierzak) na typ kot* z wykorzystaniem rzutowania dynamic_cast wraz ze sprawdzeniem, czy
+       takie rzutowanie zostalo przeprowadzone poprawnie (wyswietlic odpowiedni komunikat).
+
+    5. Zdefiniowac, dla opracowanych klas, wirtualny operator wyjscia <<, pozwalajacy wyprowadzic na
+       konsole informacje o kazdym elemencie wektora np. cout << *zwierzyniec[0];
+       Uwaga: Operator << jest zdefiniowany w klasie ostream i nie da sie go wprost zrealizowac jako
+       wirtualny, trzeba zadeklarowac w klasie bazowej metode wirtualna wyswietl (zerowa), ktora bedzie
+       zdefiniowana w klasach pochodnych i ja wykorzystac w zaprzyjaznionej metodzie operatorowej 
+       zadeklarowanej w klasie podstawowej.
+
+ */
